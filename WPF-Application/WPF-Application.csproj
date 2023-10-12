@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\avatar.png" />
     <None Remove="Assets\background.png" />
     <None Remove="Assets\login.png" />
     <None Remove="Assets\logo.png" />
@@ -16,10 +17,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

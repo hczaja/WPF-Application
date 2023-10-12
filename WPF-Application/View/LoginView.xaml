@@ -31,15 +31,15 @@
         <Border
             CornerRadius="50"
             BorderThickness="2"
-            Opacity="0.85">
+            Opacity="0.95">
             <Border.BorderBrush>
-                <SolidColorBrush Color="#FFD8CEAF"></SolidColorBrush>
+                <SolidColorBrush Color="{StaticResource borderColor}"></SolidColorBrush>
             </Border.BorderBrush>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#FFE8E2D4" Offset="0"></GradientStop>
-                    <GradientStop Color="#FFD8CEAF" Offset="0.5"></GradientStop>
-                    <GradientStop Color="#FFA5A4A0" Offset="1"></GradientStop>
+                    <GradientStop Color="{StaticResource backgroundColor1}" Offset="0"></GradientStop>
+                    <GradientStop Color="{StaticResource backgroundColor2}" Offset="0.5"></GradientStop>
+                    <GradientStop Color="{StaticResource backgroundColor3}" Offset="1"></GradientStop>
                 </LinearGradientBrush>
             </Border.Background>
 

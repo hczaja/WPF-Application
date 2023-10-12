@@ -15,6 +15,7 @@ namespace WPF_Application.Repositories
         void Update(UserModel model);
         void Remove(int id);
         UserModel Get(int id);
+        UserModel GetByUsername(string name);
         IEnumerable<UserModel> GetAll();
     }
 }

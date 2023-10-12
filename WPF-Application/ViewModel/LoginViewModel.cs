@@ -14,10 +14,10 @@ namespace WPF_Application.ViewModel
 {
     public class LoginViewModel : ViewModelBase
     {
-        private string _username = "Username";
+        private string _username;
         private SecureString _password;
         private string _errorMessage;
-        private bool _isVisibleView = true;
+        private bool _isViewVisible = true;
 
         private IUserRepository _userRepository;
 
@@ -51,13 +51,13 @@ namespace WPF_Application.ViewModel
             }
         }
 
-        public bool IsVisibleView 
+        public bool IsViewVisible 
         { 
-            get => _isVisibleView;
+            get => _isViewVisible;
             set
             {
-                _isVisibleView = value;
-                OnPropertyChanged(nameof(IsVisibleView));
+                _isViewVisible = value;
+                OnPropertyChanged(nameof(IsViewVisible));
             }
         }
 
@@ -87,7 +87,7 @@ namespace WPF_Application.ViewModel
             if (isValidUser)
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(Username), null);
-                IsVisibleView = true;
+                IsViewVisible = false;
             }
             else
             {

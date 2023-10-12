@@ -42,6 +42,39 @@ namespace WPF_Application.Repositories
             throw new NotImplementedException();
         }
 
+        public UserModel GetByUsername(string username)
+        {
+            UserModel model = null;
+
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+
+                command.Connection = connection;
+                command.CommandText = "Select *from [User] where username=@username";
+                command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        model = new UserModel()
+                        {
+                            Id = reader[0].ToString(),
+                            Username = reader[1].ToString(),
+                            Password = string.Empty,
+                            Name = reader[3].ToString(),
+                            LastName = reader[4].ToString(),
+                            Email = reader[5].ToString()
+                        };
+                    }
+                }
+            }
+
+            return model;
+        }
+
         public IEnumerable<UserModel> GetAll()
         {
             throw new NotImplementedException();
